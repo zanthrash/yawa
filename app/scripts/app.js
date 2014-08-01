@@ -17,6 +17,12 @@ function RoutingConfig ($routeProvider) {
     });
 }
 
+function CORSConfig ($httpProvider) {
+  $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+  delete $httpProvider.defaults.headers.common['X-Request-With'];
+}
+
 angular
   .module('yawaApp', [
     'ngAnimate',

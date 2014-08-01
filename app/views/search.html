@@ -1,39 +1,34 @@
 <div class="jumbotron">
-    <h1>'Allo, 'Allo!</h1>
-
-    <p class="lead">
-        <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-        Always a pleasure scaffolding your apps.
-    </p>
-
-    <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-
-    <input type="text" ng-model="searchSelected" typeahead="cities for cities in search.search($viewValue)">
-
-    <p>Model {{searchSelected}}</p>
-</div>
-
-<div class="row marketing">
-    <ul>
-        <li ng-repeat="thing in search.awesomeThings">{{thing}}</li>
-    </ul>
-</div>
-
-<div class="row marketing">
-    <h4>HTML5 Boilerplate</h4>
-
     <p>
-        HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or
-        sites.
+        <input type="text" class="form-control" ng-model="search.selectedCity" data-animation="am-flip-x" ng-options="city as city.name for city in search.search($viewValue)" placeholder="Enter city" bs-typeahead>
     </p>
-
-    <h4>Angular</h4>
-
     <p>
-        AngularJS is a toolset for building the framework most suited to your application development.
+        <button class="btn btn-primary" ng-click="search.fetchCityWeather()">Get Weather</button>
     </p>
-
-    <h4>Karma</h4>
-
-    <p>Spectacular Test Runner for JavaScript.</p>
 </div>
+
+
+<div class="row marketing" ng-show="search.conditions">
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>
+                <img ng-src="{{search.conditions.icon_url}}">
+            </td>
+            <td>
+                <h3>{{search.conditions.display_location.full}}</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>Temp F</td>
+            <td>{{search.conditions.temp_f}}</td>
+        </tr>
+        <tr>
+            <td>Temp C</td>
+            <td>{{search.conditions.temp_c}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
