@@ -8,9 +8,10 @@ function RoutingConfig ($routeProvider) {
       controller: 'SearchCtrl',
       controllerAs: 'search'
     })
-    .when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
+    .when('/api', {
+      templateUrl: '../views/apiKey.html',
+      controller: 'ApiKeyCtrl',
+      controllerAs: 'api'
     })
     .otherwise({
       redirectTo: '/'
@@ -25,6 +26,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'search.controller'
+    'search.controller',
+    'apiKey.controller'
+
   ])
   .config(RoutingConfig);
