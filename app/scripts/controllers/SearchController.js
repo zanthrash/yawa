@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function SearchController ($http, $log, ApiKey, SearchURL, BaseApiURL, ConditionURL) {
+  function SearchController ($http, $log, ApiKey, CityFinderService, BaseApiURL, ConditionURL) {
 
     var self = this;
     self.selectedCity = {};
@@ -10,11 +10,7 @@
     self.apiKey = ApiKey.wu;
 
     this.search = function (q) {
-      return $http.jsonp(SearchURL, {params: {query:q, cb: 'JSON_CALLBACK'}, headers: {"Content-Type": "application/json"} })
-        .then ( function (response) {
-        $log.debug(response.data);
-        return response.data.RESULTS;
-      })
+      return CityFinderService.findCityInfo(q)
     };
 
     this.fetchCityWeather = function () {
@@ -30,7 +26,7 @@
   }
 
   angular
-    .module('search.controller', ['mgcrea.ngStrap', 'apiKey.value', 'constants'])
+    .module('search.controller', ['mgcrea.ngStrap', 'apiKey.value', 'constants', 'cityFinder'])
     .controller('SearchCtrl', SearchController);
 
 
