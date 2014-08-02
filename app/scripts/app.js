@@ -18,6 +18,7 @@ function RoutingConfig ($routeProvider) {
     });
 }
 
+
 angular
   .module('yawaApp', [
     'ngAnimate',

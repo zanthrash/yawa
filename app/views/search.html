@@ -10,24 +10,24 @@
 </div>
 
 
-<div class="row marketing" ng-show="search.conditions">
+<div class="row marketing" ng-show="search.weather.conditions">
     <table class="table">
         <tbody>
         <tr>
             <td>
-                <img ng-src="{{search.conditions.icon_url}}">
+                <img ng-src="{{search.weather.conditions.icon_url}}">
             </td>
             <td>
-                <h3>{{search.conditions.display_location.full}}</h3>
+                <h3>{{search.weather.conditions.display_location.full}}</h3>
             </td>
         </tr>
         <tr>
             <td>Temp F</td>
-            <td>{{search.conditions.temp_f}}</td>
+            <td>{{search.weather.conditions.temp_f}}</td>
         </tr>
         <tr>
             <td>Temp C</td>
-            <td>{{search.conditions.temp_c}}</td>
+            <td>{{search.weather.conditions.temp_c}}</td>
         </tr>
         </tbody>
     </table>
