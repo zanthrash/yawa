@@ -16,10 +16,11 @@
     this.fetchCityWeather = function () {
       WeatherFetchingService.findConditions(self.selectedCity);
     }
+
   }
 
   angular
-    .module('search.controller', ['mgcrea.ngStrap', 'apiKey.value','cityFinder', 'weatherFetching'])
+    .module('search.controller', ['mgcrea.ngStrap', 'apiKey.value','cityFinder', 'weatherFetching', 'time.filters'])
     .controller('SearchCtrl', SearchController);
 
 

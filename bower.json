@@ -13,7 +13,8 @@
     "angular-touch": "1.2.16",
     "angular-route": "1.2.16",
     "angular-strap": "~2.0.4",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "moment": "~2.8.1"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
