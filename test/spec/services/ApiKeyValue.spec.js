@@ -1,6 +1,6 @@
 'use strict';
 
-ddescribe('Service: apiKey for wunderground', function () {
+describe('Service: apiKey for wunderground', function () {
 
   // load the service's module
   beforeEach(module('apiKey.value'));
