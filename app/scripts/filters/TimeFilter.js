@@ -3,7 +3,7 @@
 
   function RelativeTime () {
     return function (input) {
-      return  moment(input).fromNow();
+      return  moment(new Date(input)).fromNow();
     };
   }
 
