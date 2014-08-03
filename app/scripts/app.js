@@ -29,6 +29,7 @@ angular
     'ngTouch',
     'search.controller',
     'apiKey.controller',
-    'citySearch'
+    'citySearch',
+    'weatherInterceptor'
   ])
   .config(RoutingConfig);
