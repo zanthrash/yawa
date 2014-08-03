@@ -3,5 +3,5 @@
 
   angular
     .module('apiKey.value', [])
-    .value('ApiKey', {'wu': undefined});
+    .value('ApiKey', {'wu': 'a578445f30e79230'});
 })();

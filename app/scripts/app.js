@@ -28,7 +28,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'search.controller',
-    'apiKey.controller'
-
+    'apiKey.controller',
+    'citySearch'
   ])
   .config(RoutingConfig);
