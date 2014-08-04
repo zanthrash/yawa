@@ -18,6 +18,9 @@ function RoutingConfig ($routeProvider) {
     });
 }
 
+function CitySearchConfig (CitySearchServiceProvider, SearchURL ) {
+  CitySearchServiceProvider.setSearchURL(SearchURL);
+}
 
 angular
   .module('yawaApp', [
@@ -30,6 +33,9 @@ angular
     'search.controller',
     'apiKey.controller',
     'citySearch',
-    'weatherInterceptor'
+    'weatherInterceptor',
+    'cityFinder',
+    'constants'
   ])
+  .config(CitySearchConfig)
   .config(RoutingConfig);

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function SearchController (ApiKey, CityFinderService, WeatherFetchingService) {
+  function SearchController (ApiKey, CitySearchService, WeatherFetchingService) {
 
     var self = this;
     self.selectedCity = {};
@@ -10,7 +10,7 @@
     self.apiKey = ApiKey.wu;
 
     this.search = function (q) {
-      return CityFinderService.findCityInfo(q)
+      return CitySearchService.findCityInfo(q)
     };
 
     this.fetchCityWeather = function () {
