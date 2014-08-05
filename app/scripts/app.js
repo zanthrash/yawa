@@ -35,7 +35,9 @@ angular
     'citySearch',
     'weatherInterceptor',
     'cityFinder',
-    'constants'
+    'constants',
+    'log.decorator'
   ])
   .config(CitySearchConfig)
   .config(RoutingConfig);
+

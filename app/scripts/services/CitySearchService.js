@@ -7,7 +7,7 @@
     this.findCityInfo = function (q) {
       return $http.jsonp(SearchURL, {params: {query:q, cb: 'JSON_CALLBACK'}, headers: {"Content-Type": "application/json"} })
         .then ( function (response) {
-          $log.debug(response.data);
+          $log.debug('findCityInfo', response.data);
           return response.data.RESULTS;
       });
     }
@@ -26,7 +26,7 @@
         findCityInfo: function(q) {
           return $http.jsonp(self.searchURL, {params: {query:q, cb: 'JSON_CALLBACK'}, headers: {"Content-Type": "application/json"} })
             .then ( function (response) {
-            $log.debug(response.data);
+            $log.debug('findCityInfo', response.data);
             return response.data.RESULTS;
           });
         }
