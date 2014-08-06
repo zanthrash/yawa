@@ -1,6 +1,6 @@
 'use strict';
 
-ddescribe('Service: WeatherFetchingService', function () {
+describe('Service: WeatherFetchingService', function () {
 
   // load the service's module
   beforeEach(module('weatherFetching', 'weatherFetchingMocks'));

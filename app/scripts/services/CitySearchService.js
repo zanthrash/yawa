@@ -11,6 +11,7 @@
     this.$get = function ($http, $log) {
       var self = this;
       return {
+        searchURL: self.searchURL,
         findCityInfo: function(q) {
           return $http.jsonp(self.searchURL, {params: {query:q, cb: 'JSON_CALLBACK'}, headers: {"Content-Type": "application/json"} })
             .then ( function (response) {
