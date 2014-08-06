@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function WeatherService ($http, $log, ApiKey, BaseApiURL, ConditionURL) {
+  function WeatherService ($http, $window, $log, ApiKey, BaseApiURL, ConditionURL) {
 
     var WeatherService = {};
 
@@ -11,16 +11,22 @@
       var key = ApiKey.wu;
       var fetchUrl = [BaseApiURL, key, ConditionURL, selectedCity.l, '.json'].join('');
       return $http.jsonp(fetchUrl, {params: {callback: 'JSON_CALLBACK'}, headers: {"Content-Type": "application/json"}})
-        .then( function (response) {
+        .then(
+        function (response) {
+          $log.debug('findConditions', response.data);
           WeatherService.conditions = response.data.current_observation;
-          $log.debug(response.data);
-        });
+        },
+        function (response) {
+          $window.alert('There was and issue fetching the weather');
+        }
+      );
     };
 
     return WeatherService;
   }
 
-  angular.module('weatherFetching', ['apiKey.value', 'constants'])
+  angular
+    .module('weatherFetching', ['apiKey.value', 'constants'])
     .factory('WeatherFetchingService', WeatherService);
 
 })();
