@@ -1,6 +1,6 @@
 'use strict';
 
-ddescribe('Service: CitySearchService', function () {
+describe('Service: CitySearchService', function () {
 
   // load the service's module
   beforeEach(module('cityFinder'));
