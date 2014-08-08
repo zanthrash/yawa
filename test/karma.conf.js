@@ -18,6 +18,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-animate/angular-animate.js',
@@ -27,6 +28,7 @@ module.exports = function(config) {
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-strap/dist/angular-strap.js',
+      'bower_components/moment/moment.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'

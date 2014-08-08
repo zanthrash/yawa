@@ -2,33 +2,5 @@
     <city-search></city-search>
 </div>
 
-
-<div class="row marketing" ng-show="search.weather.conditions">
-    <table class="table">
-        <tbody>
-        <tr>
-            <td>
-                <img ng-src="{{search.weather.conditions.icon_url}}">
-            </td>
-            <td>
-                <h3>{{search.weather.conditions.display_location.full}}</h3>
-            </td>
-        </tr>
-        <tr>
-            <td>Last Updated</td>
-            <td>{{search.weather.conditions.local_epoch | relativeTime}}</td>
-        </tr>
-
-        <tr>
-            <td>Temp F</td>
-            <td>{{search.weather.conditions.temp_f}}&deg;</td>
-        </tr>
-        <tr>
-            <td>Temp C</td>
-            <td>{{search.weather.conditions.temp_c}}&deg;</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
+<weather-results search-results="search.weather.conditions"></weather-results>
 

@@ -33,6 +33,7 @@ angular
     'search.controller',
     'apiKey.controller',
     'citySearch',
+    'weatherResults',
     'weatherInterceptor',
     'cityFinder',
     'constants',
