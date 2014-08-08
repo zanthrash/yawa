@@ -1,6 +1,6 @@
 'use strict';
 
-ddescribe('Directive: WeatherResults', function () {
+describe('Directive: WeatherResults', function () {
 
   // load the directive's module
   beforeEach(module('weatherResults'));

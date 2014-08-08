@@ -1,6 +1,6 @@
 'use strict';
 
-ddescribe('Controller: SearchCtrl', function () {
+describe('Controller: SearchCtrl', function () {
 
   // load the controller's module
   beforeEach(module('search.controller'));
