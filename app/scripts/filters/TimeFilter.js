@@ -10,6 +10,5 @@
   angular
     .module('time.filters', [])
     .filter('relativeTime',  RelativeTime);
-
 })();
 
