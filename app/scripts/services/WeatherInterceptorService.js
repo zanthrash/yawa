@@ -5,9 +5,6 @@
   function WeatherInterceptor ($log, $q, $window, BaseApiURL) {
     var Interceptor = {};
 
-    Interceptor.isWeatherApiResponse= function(url) {
-      return url.indexOf(BaseApiURL) > -1;
-    };
 
     Interceptor.request = function (config) {
       $log.debug("Interceptor.request", config);
@@ -21,6 +18,9 @@
 
 
 
+    Interceptor.isWeatherApiResponse= function(url) {
+      return url.indexOf(BaseApiURL) > -1;
+    };
 
     Interceptor.response = function (response) {
 
