@@ -141,7 +141,7 @@ The pattern usually goes like this:
 ###### Example Files
 [WeatherResultsDirective.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fdirectives%2FWeatherResultsDirective.js)
 
-[WeatherResultsDirective.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fdirectives%2FWeatherResults.spec.js)
+[WeatherResultsDirective.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fdirectives%2FWeatherResultsDirective.spec.js)
 
 
 #### Testing Interceptors
