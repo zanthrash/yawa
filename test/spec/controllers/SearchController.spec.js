@@ -16,7 +16,7 @@ describe('Controller: SearchCtrl', function () {
 
     var CitySearchService;
     beforeEach(inject(function (_CitySearchService_) {
-      CitySearchService = _CitySearchService_
+      CitySearchService = _CitySearchService_;
       spyOn(CitySearchService, 'findCityInfo').andReturn({});
     }));
 
@@ -33,12 +33,12 @@ describe('Controller: SearchCtrl', function () {
 
     beforeEach(inject(function (_WeatherFetchingService_) {
       WeatherFetchingService = _WeatherFetchingService_;
-      spyOn(WeatherFetchingService, 'findConditions')
+      spyOn(WeatherFetchingService, 'findConditions');
     }));
 
     it('should call to the WeatherFetchingService when the selectedCity is set', function () {
-      SearchCtrl.selectedCity = {l: '/q/zwt:9999'}
-      SearchCtrl.fetchCityWeather()
+      SearchCtrl.selectedCity = {l: '/q/zwt:9999'};
+      SearchCtrl.fetchCityWeather();
 
       expect(WeatherFetchingService.findConditions).toHaveBeenCalledWith(SearchCtrl.selectedCity)
     });
