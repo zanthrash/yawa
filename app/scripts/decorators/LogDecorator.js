@@ -1,21 +1,22 @@
 (function () {
   'use strict';
 
-  angular.module('log.decorator', [])
+  angular
+    .module('log.decorator', [])
     .config(function ($provide) {
       $provide.decorator('$log', function ($delegate) {
 
-        var origDebug = $delegate.debug;
+        $delegate.debug = enhanceDebug($delegate.debug);
 
-        $delegate.debug = function() {
+        function enhanceDebug(fn) {
+          return function () {
+            var args = [].slice.call(arguments);
+            var now = moment().format('h:mm:ss a');
+            args[0] = now + " - " + args[0];
 
-          var args = [].slice.call(arguments);
-          var now = moment().format('h:mm:ss a')
-
-          args[0] = now + " - " + args[0]
-
-          origDebug.apply(null, args);
-        };
+            fn.apply(this, args);
+          }
+        }
 
         return $delegate;
       });
