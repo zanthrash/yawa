@@ -1,11 +1,12 @@
 'use strict';
 
-ddescribe('Decorator: Log', function () {
+describe('Decorator: Log', function () {
 
   beforeEach( module('log.decorator'));
 
   it('should use the decorator', inject(function ($log) {
 
+    // Need to call this to get the logs array to be added in the angular.mocks.$LogProvider
     $log.reset();
     $log.debug('foo');
 

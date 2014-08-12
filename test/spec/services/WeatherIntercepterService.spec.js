@@ -7,13 +7,11 @@ describe('Service: weatherInterceptorService', function () {
 
   // instantiate service
   var weatherInterceptorService;
-  var $httpBackend;
   var $window;
   var BaseApiURL;
 
 
-  beforeEach(inject(function (_weatherInterceptorService_, _$httpBackend_, _$window_, _BaseApiURL_) {
-    $httpBackend = _$httpBackend_;
+  beforeEach(inject(function (_weatherInterceptorService_, _$window_, _BaseApiURL_) {
     $window = _$window_;
     BaseApiURL = _BaseApiURL_;
     weatherInterceptorService = _weatherInterceptorService_;
