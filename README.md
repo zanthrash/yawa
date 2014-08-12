@@ -67,25 +67,45 @@ service mock out all $http calls.
 
 #### Testing Providers
 ###### About
-Providers are like Factories with the expeption that they can be configured at module bootstrap time in a `modlue.config()` call.
+Providers are like Factories with the expeption that they can be configured at module bootstrap time in a `module.config()` call.
 
 ###### Testing Points
 In testing providers you want to test them like Factories, executing your busiess logic. But you also want to test how they act with the default config and a bootstraped custom config. 
 
 #### Testing Controllers
 ###### About
+Controllers are used to back your views with data and functionallity. The should be dead stupid and not contain any bussiness logic if it can be avoided; favoring delegation to Factories/Services/Providers instead.
 
 ###### Testing Points
+If you encapsulate you business logic in the Service layer testing controllers should be very easy. You are bascially testing the interactions with the Services.  
+
+Remember you just want to make sure the controller calls the service with the right parameters. This is where a good mocking libray comes in handy. You don't want to have to mock out `$httpBackend` calls when testing Controllers.
 
 #### Testing Filters
 ###### About
+Filters are best used when you want to take an input and do sometype of transformation on it.  
+
+e.g. change `new Date().getTime()` to `two minutes ago`
+
+It is generally not a good idea to use them to wrap data in html tags(as I've seen too many times). Better to use a Directive for that.
 
 ###### Testing Points
+Filter are simple functions that have an imput and an output, so testing them is pretty easy.  Just the `$filter()` function to create the filter funtion then pass your input in.
 
 #### Testing Directives
 ###### About
+Directives are all about encapsulation DOM creation, maniulation, and event handling. Because the are the Swiss Army Knife of AngularJS the is no single way to describe how to test them.
 
 ###### Testing Points
+The trickest part of testing a directive is getting it set up in your test.
+
+The pattern usually goes like this:
+* create a local `$scope` variable by injecting `$rootScope` and calling its `$new()` function.
+* set you bindable data to `$scope`
+* create you directive element by passing the directives html into `angulr.element(<my-directive></my-directive>)`
+* compile your element by passing it into the `$compile(element)` this will return a function
+* which you need to call with the `$scope` that you previously created. This will give you a JQuery or jQLite DOMObjet that you can inspect and trigger event on.
+
 
 #### Testing Interceptors
 ###### About
