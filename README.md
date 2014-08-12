@@ -109,12 +109,21 @@ The pattern usually goes like this:
 
 #### Testing Interceptors
 ###### About
+Interceptors intercept ALL http `requests`, `requestError`, `response`, `responseError`.  They are created similar to a factory and need to a have one or more of the above mentions functions.  Interceptors work in a chain of responsibiliy pattern where you one or more intercetpors to a list on $httpProvider.
 
 ###### Testing Points
+Fairly simple to test.  Just inject the interceptor into your test and exercise the functions.
+
 
 #### Testing Decorators
 ###### About
+Decorators let you alter the functionality of any Service except Constraints.  This can be very usefull if you need/want to alter any of the base AngularJS Services, third party Services, or even your own Services (can be usefull in testing ;) )
 
 ###### Testing Points
+Decorator testing is prety strait forward.  
 
+* Just bootstrap the module that has your decorator. 
+* Inject the Service that is to be Decorated
+* Exercise the now decorated service method.
+* Verify the new decorated outcome.
 
