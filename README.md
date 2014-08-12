@@ -46,6 +46,11 @@ Because Value are simple key-value store they are easy to test. There should pro
 * It default state is properly set
 * When the state is mutated and it is injected somewhere else the Value reflects the change.
 
+###### Example Files
+[ApiKeyValue.js](https://github.com/zanthrash/yawa/blob/master/app/scripts/services/ApiKeyValue.js)
+
+[ApiKeyValue.spec.js](https://github.com/zanthrash/yawa/blob/master/test/spec/services/ApiKeyValue.spec.js)
+
 #### Testing Constants
 ###### About
 Constraints are similar to Values with the exception that they can be injected into a module config and CANNOT be wraped in a decorator.
@@ -53,6 +58,11 @@ Even though constraints imply immutability there is no mechinism to prevent them
 
 ###### Testing Points
 Pretty much the same as Values.
+
+###### Example Files
+[Constants.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fservices%2FConstants.js)
+
+[Constants.spec.js](https://github.com/zanthrash/yawa/blob/master/test/spec/services/Constants.spec.js)
 
 #### Testing Factories
 ###### About
@@ -65,12 +75,23 @@ Because they are singletons they are often used to hold state that is fethced fo
 Because Factories interact with backend services there is often a need to utilze the `angular.mock.$httpBackend`
 service mock out all $http calls.
 
+###### Example Files
+[WeatherFetchingService.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fservices%2FWeatherFetchingService.js)
+
+[WeatherFetchingService.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fservices%2FWeatherFetchingService.spec.js)
+
 #### Testing Providers
 ###### About
 Providers are like Factories with the expeption that they can be configured at module bootstrap time in a `module.config()` call.
 
 ###### Testing Points
 In testing providers you want to test them like Factories, executing your busiess logic. But you also want to test how they act with the default config and a bootstraped custom config. 
+
+###### Example Files
+[CitySearchService.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fservices%2FCitySearchService.js)
+
+[CitySearchService.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fservices%2FCitySearchService.spec.js)
+
 
 #### Testing Controllers
 ###### About
@@ -80,6 +101,11 @@ Controllers are used to back your views with data and functionallity. The should
 If you encapsulate you business logic in the Service layer testing controllers should be very easy. You are bascially testing the interactions with the Services.  
 
 Remember you just want to make sure the controller calls the service with the right parameters. This is where a good mocking libray comes in handy. You don't want to have to mock out `$httpBackend` calls when testing Controllers.
+
+###### Example Files
+[SearchController.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fcontrollers%2FSearchController.js)
+
+[SearchController.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fcontrollers%2FSearchController.spec.js)
 
 #### Testing Filters
 ###### About
@@ -92,12 +118,18 @@ It is generally not a good idea to use them to wrap data in html tags(as I've se
 ###### Testing Points
 Filter are simple functions that have an imput and an output, so testing them is pretty easy.  Just the `$filter()` function to create the filter funtion then pass your input in.
 
+###### Example Files
+[TimeFilter.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Ffilters%2FTimeFilter.js)
+
+[TimeFilter.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Ffilters%2FTimeFilter.spec.js)
+
+
 #### Testing Directives
 ###### About
 Directives are all about encapsulation DOM creation, maniulation, and event handling. Because the are the Swiss Army Knife of AngularJS the is no single way to describe how to test them.
 
 ###### Testing Points
-The trickest part of testing a directive is getting it set up in your test.
+The trickiest part of testing a directive is getting it set up in your test.
 
 The pattern usually goes like this:
 * create a local `$scope` variable by injecting `$rootScope` and calling its `$new()` function.
@@ -106,6 +138,11 @@ The pattern usually goes like this:
 * compile your element by passing it into the `$compile(element)` this will return a function
 * which you need to call with the `$scope` that you previously created. This will give you a JQuery or jQLite DOMObjet that you can inspect and trigger event on.
 
+###### Example Files
+[WeatherResultsDirective.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fdirectives%2FWeatherResultsDirective.js)
+
+[WeatherResults.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fdirectives%2FWeatherResults.spec.js)
+
 
 #### Testing Interceptors
 ###### About
@@ -113,6 +150,11 @@ Interceptors intercept ALL http `requests`, `requestError`, `response`, `respons
 
 ###### Testing Points
 Fairly simple to test.  Just inject the interceptor into your test and exercise the functions.
+
+###### Example Files
+[WeatherInterceptorService.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fservices%2FWeatherInterceptorService.js)
+
+[WeatherInterceptorService.spec.js](https://github.com/zanthrash/yawa/blob/master/test%2Fspec%2Fservices%2FWeatherIntercepterService.spec.js)
 
 
 #### Testing Decorators
@@ -127,3 +169,7 @@ Decorator testing is prety strait forward.
 * Exercise the now decorated service method.
 * Verify the new decorated outcome.
 
+###### Example Files
+[LogDecorator.js](https://github.com/zanthrash/yawa/blob/master/app%2Fscripts%2Fdecorators%2FLogDecorator.js)
+
+[LogDecorator.spec.js](https://github.com/zanthrash/yawa/blob/master/test/spec/decorators/LogDecorator.spec.js)
