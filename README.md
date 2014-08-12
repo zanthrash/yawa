@@ -5,6 +5,7 @@ Yet Another Weather App (Y.A.W.A)
 
 #### TOC
 [Setup](#setup)
+[Testing Values](#testingvalues)
 
 
 #### Setup 
@@ -15,4 +16,4 @@ Yet Another Weather App (Y.A.W.A)
 4. At the command line run `npm install && bower install`
 5. Afer all packages have donwloaded run `grunt serve`
 
-
+#### Testing Values
