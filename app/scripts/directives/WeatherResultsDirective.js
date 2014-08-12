@@ -42,7 +42,6 @@ angular
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         element.on('click', function() {
-          console.log('clicked motherfucker');
           $window.alert(scope.searchResults.weather);
         })
       }
