@@ -9,7 +9,7 @@ The applcation uses the Weather Underground API for the typeahead city search an
 the weather of the selected city.
 
 This app is for demonstration purposes and attemts to show examples of how test the many artifacts of 
-the AgularJS framework using the [Jasmine]() testing framework and the [Karma]() test runner.
+the AgularJS framework using the [Jasmine](http://jasmine.github.io/) testing framework and the [Karma](http://karma-runner.github.io/0.12/index.html) test runner.
 
 
 
@@ -36,6 +36,15 @@ the AgularJS framework using the [Jasmine]() testing framework and the [Karma]()
 5. Afer all packages have donwloaded run `grunt serve`
 
 #### Testing Values
+###### About
+Values in AngularJS are key-value pairs that can be injected into other AngularJS artifacts.  
+Values can be useful for saving application level state.
+
+###### Testing Points
+Because Value are simple key-value store they are easy to test. There should probably be a test for:
+* It can be properly injected
+* It default state is properly set
+* When the state is mutated and it is injected somewhere else the Value reflects the change.
 
 #### Testing Constants
 
