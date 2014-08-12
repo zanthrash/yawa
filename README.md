@@ -16,6 +16,14 @@ the AgularJS framework using the [Jasmine]() testing framework and the [Karma]()
 #### TOC
 * [Setup](#setup)
 * [Testing Values](#testing-values)
+* [Testing Constants](#testing-constants)
+* [Testing Factories](#testing-factories)
+* [Testing Providers](#testing-providers)
+* [Testing Controllers](#testing-controllers)
+* [Testing Filters](#testing-filters)
+* [Testing Directives](#testing-directives)
+* [Testing Intercptors](#testing-interceptors)
+* [Testing Decorators](#testing-decorators)
 
 
 
