@@ -47,19 +47,54 @@ Because Value are simple key-value store they are easy to test. There should pro
 * When the state is mutated and it is injected somewhere else the Value reflects the change.
 
 #### Testing Constants
+###### About
+Constraints are similar to Values with the exception that they can be injected into a module config and CANNOT be wraped in a decorator.
+Even though constraints imply immutability there is no mechinism to prevent them from being changed.
+
+###### Testing Points
+Pretty much the same as Values.
 
 #### Testing Factories
+###### About
+Factories are just a creation pattern for creating a singleton service in AngularJS.
+They are created by a function that returns an object.
+Factories are used to encapsulated business logic and communicate with you backend services.
+Because they are singletons they are often used to hold state that is fethced form the server.
+
+###### Testing Points
+Because Factories interact with backend services there is often a need to utilze the `angular.mock.$httpBackend`
+service mock out all $http calls.
 
 #### Testing Providers
+###### About
+Providers are like Factories with the expeption that they can be configured at module bootstrap time in a `modlue.config()` call.
+
+###### Testing Points
+In testing providers you want to test them like Factories, executing your busiess logic. But you also want to test how they act with the default config and a bootstraped custom config. 
 
 #### Testing Controllers
+###### About
+
+###### Testing Points
 
 #### Testing Filters
+###### About
+
+###### Testing Points
 
 #### Testing Directives
+###### About
+
+###### Testing Points
 
 #### Testing Interceptors
+###### About
+
+###### Testing Points
 
 #### Testing Decorators
+###### About
+
+###### Testing Points
 
 
