@@ -8,7 +8,7 @@ This is a fully working (although a bit contrived) example of an AngularJS front
 The applcation uses the Weather Underground API for the typeahead city search and for fetching
 the weather of the selected city.
 
-This app is for demonstration purposes and attemts to show examples of how test the many artifacts of 
+This app is for demonstration purposes and attempts to show examples of how test the many artifacts of 
 the AgularJS framework using the [Jasmine](http://jasmine.github.io/) testing framework and the [Karma](http://karma-runner.github.io/0.12/index.html) test runner.
 
 
